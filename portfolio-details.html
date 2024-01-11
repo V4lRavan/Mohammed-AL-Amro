@@ -95,10 +95,7 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <video width="800" height="500" controls>
-                    <source src="assets/img/portfolio/Vid.mp4" type="video/mp4">
-                  </video>
-                 
+                  <iframe width="800" height="500" src="https://www.youtube.com/embed/5Y5omZfAqsk?si=Hh-KW2JxGGwByHux" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
 
                 <div class="swiper-slide">
@@ -127,12 +124,53 @@
             <div class="portfolio-description">
               <h2>Further Details</h2>
               <p>
-                I developed this project in team of 6 where I had 4 artists and a designer to work with. I am especially proud of the object pooling implementation in this project as I used it to spawn a certain amount of lanterns that light the way. If you spawn too many lanterns the first ones begin to despawn which adds an extra layer of gameplay.
+                I developed this project in team of 6 where I had 4 artists and a designer to work with. My role was the lead programmer as I coded / blueprinted mechanics into the game alongside balancing and managing UI. I am especially proud of the object pooling implementation in this project as I used it to spawn a certain amount of lanterns that light the way. If you spawn too many lanterns the first ones begin to despawn which adds an extra layer of gameplay.
               </p>
             </div>
           </div>
+          
+          <div class="col-lg- pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h4> Object Pooling </h4>
+            <p>Object pooling is a design pattern that allows you to reuse a set of objects instead of creating and destroying them on demand. This can improve the performance and efficiency of your applications, especially when the objects are expensive to instantiate or you need to use them frequently. 
 
-        </div>
+             </p>
+            <p>Here is a snippet code of my PoolObject class that spawns the pooled object</p>
+            <p>
+              <pre><APooledObject* UPoolObject::SpawnPooledObject()
+                {
+                  for (APooledObject* PoolableActor : ObjectPool)
+                  {
+                    if (PoolableActor != nullptr && !PoolableActor->IsActive())
+                    {
+                      PoolableActor->TeleportTo(FVector(0, 0, 0), FRotator(0, 0, 0));
+                      PoolableActor->SetLifeSpan(PooledObjectLifeSpan);
+                      PoolableActor->SetActive(true);
+                      SpawnedPoolIndexes.Add(PoolableActor->GetPoolIndex());
+                        return PoolableActor;
+                    }
+                  }
+                  if (SpawnedPoolIndexes.Num() > 0)
+                  {
+                    int PooledObjectIndex = SpawnedPoolIndexes[0];
+                    SpawnedPoolIndexes.Remove(PooledObjectIndex);
+                    APooledObject* PoolableActor = ObjectPool[PooledObjectIndex];
+                
+                    if (PoolableActor != nullptr)
+                    {
+                      PoolableActor->SetActive(false);
+                      PoolableActor->TeleportTo(FVector(0, 0, 0), FRotator(0, 0, 0));
+                      PoolableActor->SetLifeSpan(PooledObjectLifeSpan);
+                      PoolableActor->SetActive(true);
+                      SpawnedPoolIndexes.Add(PoolableActor->GetPoolIndex());
+                      return PoolableActor;
+                    }
+                  }
+                
+                  return nullptr;
+                }></pre>
+              </p>
+        </div></div>
+      </div>
 
       </div>
     </section><!-- End Portfolio Details Section -->
