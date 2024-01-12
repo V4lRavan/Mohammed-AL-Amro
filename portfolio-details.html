@@ -118,7 +118,7 @@
                 <li><strong>Project name</strong>: Lil Gnome</li>
                 <li><strong>Engine</strong>: Unreal Engine 5</li>
                 <li><strong>Skills demonstrated</strong>: C++/Blueprinting</li>
-                <li><strong>Project URL</strong>: <a href="#">https://slim-val.itch.io/lil-gnome</a></li>
+                <li><strong>Project URL</strong>: <a href="https://slim-val.itch.io/lil-gnome">https://slim-val.itch.io/lil-gnome</a></li>
               </ul>
             </div>
             <div class="portfolio-description">
@@ -179,38 +179,38 @@
               <h2>Enemy AI 1</h2>
               <pre>
                 void AEnemy::OnSensed(const TArray<AActor*>& testActors)
-                {
-                  
-                  FVector enemyLocation = GetActorLocation();
-                  for (int i = 0; i < testActors.Num(); i++)
                   {
-                    FString n;
-                    n = testActors[i]->GetName();
-                    FActorPerceptionBlueprintInfo info;
-                    _aiPercComp->GetActorsPerception(testActors[i], info);
-                    if (info.LastSensedStimuli.Num() > 0 && info.LastSensedStimuli[0].WasSuccessfullySensed())
+                    
+                    FVector enemyLocation = GetActorLocation();
+                    for (int i = 0; i < testActors.Num(); i++)
                     {
-                      FVector dir = testActors[i]->GetActorLocation() - enemyLocation;
-                      dir.Z = 0.0f;
-                      _currVelocity = dir.GetSafeNormal() * _speed;
-
-                    }
-                    else
-                    {
-
-                      FVector dir = _baseLoc - enemyLocation;
-                      dir.Z = 0.0f;
-                      if (dir.SizeSquared() > 1.0f)
+                      FString n;
+                      n = testActors[i]->GetName();
+                      FActorPerceptionBlueprintInfo info;
+                      _aiPercComp->GetActorsPerception(testActors[i], info);
+                      if (info.LastSensedStimuli.Num() > 0 && info.LastSensedStimuli[0].WasSuccessfullySensed())
                       {
+                        FVector dir = testActors[i]->GetActorLocation() - enemyLocation;
+                        dir.Z = 0.0f;
                         _currVelocity = dir.GetSafeNormal() * _speed;
-                        _backToBase = true;
-                        SetNewRotation(_baseLoc, GetActorLocation());
-
+  
                       }
-
+                      else
+                      {
+  
+                        FVector dir = _baseLoc - enemyLocation;
+                        dir.Z = 0.0f;
+                        if (dir.SizeSquared() > 1.0f)
+                        {
+                          _currVelocity = dir.GetSafeNormal() * _speed;
+                          _backToBase = true;
+                          SetNewRotation(_baseLoc, GetActorLocation());
+  
+                        }
+  
+                      }
                     }
-                  }
-                }
+                  }        
               </pre>
               <h2>Enemy AI 2</h2>
               <img src="assets/img/portfolio/EnemyAi2.png" alt="">
