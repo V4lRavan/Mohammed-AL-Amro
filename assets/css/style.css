@@ -238,12 +238,17 @@ h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+
+
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/portfolio/Capture.PNG") top center;
+  background: url("../img/portfolio/Capture.PNG")  no-repeat center fixed;
   background-size: cover;
+  background-repeat: no-repeat;
 }
+
+
 
 #hero:before {
   content: "";
@@ -1104,3 +1109,4 @@ section {
     padding-right: 20px 15px;
   }
 }
+
