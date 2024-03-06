@@ -45,7 +45,7 @@
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="assets/img/testimonials/testimonials-1.jpg" alt="" class="img-fluid rounded-circle">
+        <!-- <img src="assets/img/testimonials/testimonials-1.jpg" alt="" class="img-fluid rounded-circle"> -->
         <h1 class="text-light"><a href="index.html">Mohammed Al-Amro</a></h1>
         <div class="social-links mt-3 text-center">
           <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> -->
@@ -132,8 +132,52 @@
           </div>
           
           <div class="col-lg- pt-4 pt-lg-0 content" data-aos="fade-left">
-            
-      </div>
+            <p> this project is as close to a passion project as it gets because I am a big fan of the fps genre, so making an fps game with these cool mechanics was really fun.</p>
+            <h1> Grapple Gun </h1>
+            <p>The code below shows the hook function for the grapple gun which is responsible for initialising a raycast and if that raycast hits within the specified distance it will activate the hook functionality</p>
+            <pre> private void Hook()
+              {
+                  RaycastHit hit;
+                  if (Physics.Raycast(camera.position, camera.forward, out hit, dist, GrappleLayer)) 
+                  {
+                      destination=hit.point;
+                      springJoint=player.gameObject.AddComponent<SpringJoint>();
+                      springJoint.autoConfigureConnectedAnchor= false;
+                      springJoint.connectedAnchor = destination;
+             
+                      float playerDist= Vector3.Distance(player.position, destination);
+                      springJoint.maxDistance = playerDist * 0.75f;
+                      springJoint.minDistance = playerDist * 0.3f;
+             
+                      springJoint.spring = 8.0f;
+                      springJoint.damper = 6.0f;
+                      springJoint.massScale= 5.0f;
+             
+                      line.positionCount= 2;
+                      line.enabled=true;
+                  }
+              }</pre>
+            <h1> Wall running </h1>
+            <p>In a fast paced fps game a wall running mechanic is essential. the code below shows the wall running function which applies a force either to the left of the player or to the right based on if the wall is to the left of the player or not.</p>
+            <pre> private void WallRunning()
+              {
+                  rb.useGravity = false;
+          
+                  if(rb.velocity.magnitude<=maxSpeed)
+                  {
+                      rb.AddForce(player.forward * force / 5 * Time.deltaTime);
+          
+                      //making the character stay on the wall
+                      if(isWallLeft)
+                      {
+                          rb.AddForce(-player.right * force / 5 * Time.deltaTime);
+                      }
+                      else
+                      {
+                          rb.AddForce(player.right * force / 5 * Time.deltaTime);
+                      }
+                  }  
+              }</pre>
 
       </div>
     </section><!-- End Portfolio Details Section -->

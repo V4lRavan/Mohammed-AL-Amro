@@ -45,7 +45,7 @@
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="assets/img/testimonials/testimonials-1.jpg" alt="" class="img-fluid rounded-circle">
+       <!--  <img src="assets/img/testimonials/testimonials-1.jpg" alt="" class="img-fluid rounded-circle"> -->
         <h1 class="text-light"><a href="index.html">Mohammed Al-Amro</a></h1>
         <div class="social-links mt-3 text-center">
           <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> -->
@@ -127,7 +127,26 @@
           </div>
           
           <div class="col-lg- pt-4 pt-lg-0 content" data-aos="fade-left">
-           
+           <h1> Bird dragging</h1>
+           <p>The code below shows how I set the bird's position to be the same as the mouse position when dragged to launch it.</p>
+           <pre> void OnMouseDrag()
+            {
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector2 destinationPosition = mousePosition;
+            
+                float distance = Vector2.Distance(destinationPosition, startPosition);
+                if (distance > maxDragDistance)
+                {
+                    Vector2 direction = destinationPosition - startPosition;
+                    direction.Normalize();
+                    destinationPosition = startPosition + (direction * maxDragDistance);
+                }
+            
+                if (destinationPosition.x > startPosition.x)
+                    destinationPosition.x = startPosition.x;
+                    
+                rigidbody2D.position = destinationPosition;
+            } </pre>
       </div>
 
       </div>
