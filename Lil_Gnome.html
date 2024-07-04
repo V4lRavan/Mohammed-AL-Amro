@@ -10,11 +10,13 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/portfolio/M.jpg" rel="icon" />
+  <link href="assets/img/portfolio/M.jpg" rel="apple-touch-icon" />
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -52,15 +54,18 @@
           <!-- <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
           <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
           <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> -->
-          <a href="https://linkedin.com/in/mohammed-al-amro-a461b6283" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://linkedin.com/in/mohammed-al-amro-" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
       </div>
 
       <nav id="navbar" class="nav-menu navbar">
         <ul>
-          <li><a href="./index.html" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="./index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="./index.html#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>My Work</span></a></li>
+          <li><a href="./index.html" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a>
+          </li>
+          <li><a href="./index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a>
+          </li>
+          <li><a href="./index.html#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>My
+                Work</span></a></li>
           <!-- <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li> -->
         </ul>
       </nav><!-- .nav-menu -->
@@ -97,7 +102,7 @@
                 <div class="swiper-slide">
                   <video width="780" height="540" controls>
                     <source src="assets/img/portfolio/Vid.mp4" type="video/mp4">
-                </div> 
+                </div>
 
                 <div class="swiper-slide">
                   <img src="assets/img/portfolio/PP1.png" alt="">
@@ -119,30 +124,37 @@
                 <li><strong>Project name</strong>: Lil Gnome</li>
                 <li><strong>Engine</strong>: Unreal Engine 5</li>
                 <li><strong>Skills demonstrated</strong>: C++/Blueprinting</li>
-                <li><strong>Project URL</strong>: <a href="https://slim-val.itch.io/lil-gnome">https://slim-val.itch.io/lil-gnome</a></li>
+                <li><strong>Project URL</strong>: <a
+                    href="https://slim-val.itch.io/lil-gnome">https://slim-val.itch.io/lil-gnome</a></li>
               </ul>
             </div>
             <div class="portfolio-description">
-                <h2>Further Details</h2>
-                <ul>
-                  <li>Enemy AI</li>
-                  <li>Object Pooling</li>
-                  <li>Growing and Shrinking</li>
-                </ul>  
+              <h2>Further Details</h2>
+              <ul>
+                <li>Enemy AI</li>
+                <li>Object Pooling</li>
+                <li>Growing and Shrinking</li>
+              </ul>
             </div>
           </div>
           <div class="col-lg- pt-4 pt-lg-0 content" data-aos="fade-left">
-          I developed this project in team of 6 where I had 4 artists and a designer to work with. My role was the lead programmer as I coded / blueprinted mechanics into the game alongside balancing and managing UI. I am especially proud of the object pooling implementation in this project as I used it to spawn a certain amount of lanterns that light the way. If you spawn too many lanterns the first ones begin to despawn which adds an extra layer of gameplay.
+            I developed this project in team of 6 where I had 4 artists and a designer to work with. My role was the
+            lead programmer as I coded / blueprinted mechanics into the game alongside balancing and managing UI. I am
+            especially proud of the object pooling implementation in this project as I used it to spawn a certain amount
+            of lanterns that light the way. If you spawn too many lanterns the first ones begin to despawn which adds an
+            extra layer of gameplay.
 
-          
-            
+
+
             <h1> Object Pooling </h1>
-            <p>Object pooling is a design pattern that allows you to reuse a set of objects instead of creating and destroying them on demand. This can improve the performance and efficiency of your applications, especially when the objects are expensive to instantiate or you need to use them frequently. 
+            <p>Object pooling is a design pattern that allows you to reuse a set of objects instead of creating and
+              destroying them on demand. This can improve the performance and efficiency of your applications,
+              especially when the objects are expensive to instantiate or you need to use them frequently.
 
-             </p>
+            </p>
             <p>Here is a snippet code of my PoolObject class that spawns the pooled object</p>
             <p>
-              <pre> APooledObject* UPoolObject::SpawnPooledObject()
+            <pre> APooledObject* UPoolObject::SpawnPooledObject()
                 {
                   for (APooledObject* PoolableActor : ObjectPool)
                   {
@@ -174,16 +186,19 @@
                 
                   return nullptr;
                 } </pre>
-              </p>
-              <h1>Grow and shrink</h1>
-              <p>This was the core mechanic for our game as it allowed the player to grow and shrink size which opened up many gameplay possibilities. This was a challenging task to achieve due to the complicated nature of changing back and forth in size at run time.
-              </p>
-              <img src="assets/img/portfolio/Growandshrink1.png" alt="" width="1250" >
-              <img src="assets/img/portfolio/Growandshrink2.png" alt=""  width="1250">
-              <h1>Enemy AI</h1>
-              <p>Our game had two types of enemies, the first one chases the player if detected and damages them if collided with. The second type shoots projectiles at the player that damages them</p>
-              <h2>Enemy AI 1</h2>
-              <pre>
+            </p>
+            <h1>Grow and shrink</h1>
+            <p>This was the core mechanic for our game as it allowed the player to grow and shrink size which opened up
+              many gameplay possibilities. This was a challenging task to achieve due to the complicated nature of
+              changing back and forth in size at run time.
+            </p>
+            <img src="assets/img/portfolio/Growandshrink1.png" alt="" width="1250">
+            <img src="assets/img/portfolio/Growandshrink2.png" alt="" width="1250">
+            <h1>Enemy AI</h1>
+            <p>Our game had two types of enemies, the first one chases the player if detected and damages them if
+              collided with. The second type shoots projectiles at the player that damages them</p>
+            <h2>Enemy AI 1</h2>
+            <pre>
                 void AEnemy::OnSensed(const TArray<AActor*>& testActors)
                   {
                     
@@ -218,13 +233,15 @@
                     }
                   }        
               </pre>
-              <h2>Enemy AI 2</h2>
-              <img src="assets/img/portfolio/EnemyAi2.png" alt="">
+            <h2>Enemy AI 2</h2>
+            <img src="assets/img/portfolio/EnemyAi2.png" alt="">
 
-              <h1>Dash ability</h1>
-              <p>The dash ability was a mechanic that I emplemented towards the end of the game development due to the game needing more variety in gameplay.</p>
-              <img src="assets/img/portfolio/Dash.png" alt="">
-        </div></div>
+            <h1>Dash ability</h1>
+            <p>The dash ability was a mechanic that I emplemented towards the end of the game development due to the
+              game needing more variety in gameplay.</p>
+            <img src="assets/img/portfolio/Dash.png" alt="">
+          </div>
+        </div>
       </div>
 
       </div>
@@ -248,7 +265,8 @@
     </div>
   </footer><!-- End  Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>

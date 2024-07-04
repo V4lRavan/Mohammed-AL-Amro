@@ -47,7 +47,8 @@
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <!-- <img src="assets/img/testimonials/testimonials-1.jpg" alt="" class="img-fluid rounded-circle"> -->
+        <!--  <img src="assets/img/testimonials/testimonials-1.jpg" alt="" class="img-fluid rounded-circle">-->
+
         <h1 class="text-light"><a href="index.html">Mohammed Al-Amro</a></h1>
         <div class="social-links mt-3 text-center">
           <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> -->
@@ -102,16 +103,18 @@
 
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/K1.png" alt="">
+                  <img src="assets/img/portfolio/OP1.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/OP2.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/OP3.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/OP4.png" alt="">
                 </div>
 
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/K2.png" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/K3.png" alt="">
-                </div>
 
               </div>
               <div class="swiper-pagination"></div>
@@ -122,75 +125,51 @@
             <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>
-                <li><strong>Project name</strong>: iShoot</li>
-                <li><strong>Engine</strong>: Unity Engine</li>
-                <li><strong>Skills demonstrated</strong>: C#</li>
+                <li><strong>Project name</strong>: Old Portfolio</li>
+                <li><strong>Languages</strong>: HTML, CSS, JS.</li>
                 <li><strong>Project URL</strong>: <a
-                    href="https://slim-val.itch.io/lil-gnome">https://slim-val.itch.io/lil-gnome</a></li>
+                    href="https://github.com/V4lRavan/Old-Portfolio.git">https://github.com/V4lRavan/Old-Portfolio.git</a>
+                </li>
               </ul>
             </div>
             <div class="portfolio-description">
               <h2>Further Details</h2>
               <p>
-                This is a fast pace FPS game that combines many mechanics such as wall running, a rope gun, and enemies
-                that look sus.
+                I made this project after my first year of
+                University. I wanted it to be the website that
+                will have all of my current/future projects. It is
+                mostly populated with placeholder images as I
+                decided against using it as my final portfolio due
+                to it being too basic.
               </p>
             </div>
           </div>
 
           <div class="col-lg- pt-4 pt-lg-0 content" data-aos="fade-left">
-            <p> this project is as close to a passion project as it gets because I am a big fan of the fps genre, so
-              making an fps game with these cool mechanics was really fun.</p>
-            <h1> Grapple Gun </h1>
-            <p>The code below shows the hook function for the grapple gun which is responsible for initialising a
-              raycast and if that raycast hits within the specified distance it will activate the hook functionality</p>
-            <pre> private void Hook()
-              {
-                  RaycastHit hit;
-                  if (Physics.Raycast(camera.position, camera.forward, out hit, dist, GrappleLayer)) 
-                  {
-                      destination=hit.point;
-                      springJoint=player.gameObject.AddComponent<SpringJoint>();
-                      springJoint.autoConfigureConnectedAnchor= false;
-                      springJoint.connectedAnchor = destination;
-             
-                      float playerDist= Vector3.Distance(player.position, destination);
-                      springJoint.maxDistance = playerDist * 0.75f;
-                      springJoint.minDistance = playerDist * 0.3f;
-             
-                      springJoint.spring = 8.0f;
-                      springJoint.damper = 6.0f;
-                      springJoint.massScale= 5.0f;
-             
-                      line.positionCount= 2;
-                      line.enabled=true;
-                  }
-              }</pre>
-            <h1> Wall running </h1>
-            <p>In a fast paced fps game a wall running mechanic is essential. the code below shows the wall running
-              function which applies a force either to the left of the player or to the right based on if the wall is to
-              the left of the player or not.</p>
-            <pre> private void WallRunning()
-              {
-                  rb.useGravity = false;
-          
-                  if(rb.velocity.magnitude<=maxSpeed)
-                  {
-                      rb.AddForce(player.forward * force / 5 * Time.deltaTime);
-          
-                      //making the character stay on the wall
-                      if(isWallLeft)
-                      {
-                          rb.AddForce(-player.right * force / 5 * Time.deltaTime);
-                      }
-                      else
-                      {
-                          rb.AddForce(player.right * force / 5 * Time.deltaTime);
-                      }
-                  }  
-              }</pre>
+            <h1> JavaScript</h1>
+            <br>
+            <h2>Hamburger</h2>
+            <h3>Visibility</h3>
+            <p>
+              This was my first interaction with JavaScript as I used it to create a hamburger menu that contained the
+              main parts of the site such as Home, My Services, About Me, and My Work. To make the hamburger work the
+              ".nav-toggle" class name will be assigned to a button in html and a reference of it will be stored in the
+              constant variable navToggle. Then an event listener will be added to navToggle. if the assigned button is
+              clicked the arrow function will be executed which sets the visibility of the hamburger menu.
+            </p>
+            <br>
+            <h3>Links</h3>
+            <p>
+              navLinks does the exact same thing as navToggle except that is selects all the elements that have been
+              assigned ".nav__link". Then, a forEach loop that states for each link in navLinks an event listener gets
+              added to the link and when the link is clicked the arrow function is executed.The function removes
+              "nav-open" from the body element which closes the hamburger.
+            </p>
+            <img src="assets/img/portfolio/OPJS.png" width="750" height="400" alt="">
 
           </div>
+
+        </div>
     </section><!-- End Portfolio Details Section -->
 
   </main><!-- End #main -->
